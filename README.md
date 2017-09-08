@@ -7,6 +7,16 @@ The focus is on failure coming from inaccurate localisation of the user.
 
 Download the files from https://github.com/cri-zrh/ticketing-application
 
+Content:
+- model.pm (main PRISM model)
+- model-var.pm (same as model.pm but wihout any suggested values for variables, this is accessed by user interface.)
+- properties.pctl (property checking for probability if zone 2 was not recorded, this is accessed by user interface.)
+- properties-long.pctl (additional porperties to check if zone 1 and zone 3 weren't recorded.)
+- js.js (JavaScript logic for user interface)
+- style.css (style for user interface)
+- ticketing-system-implementation.hta (application. CLICK TO START USER INTERFACE)
+- readme.md
+
 
 ### Prerequisites
 
