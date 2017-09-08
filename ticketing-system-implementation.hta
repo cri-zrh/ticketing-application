@@ -1,0 +1,88 @@
+<html>
+<head>
+    <title>Application Executer</title>
+    <HTA:APPLICATION ID="prism-app" 
+        APPLICATIONNAME="TICKETING APPLICATION TESTING" 
+        BORDER="yes"
+        CAPTION="yes"
+        SHOWINTASKBAR="yes"
+        SINGLEINSTANCE="yes"
+        SYSMENU="yes"
+        SCROLL="yes"
+        WINDOWSTATE="normal">
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <script src="js.js"></script>
+ <!--   <script type="text/javascript" language="javascript">
+        function RunFile() {
+        //WshShell = new ActiveXObject("WScript.Shell");
+        //WshShell.Run("c:/windows/system32/notepad.exe", 1, false);
+        WshShell = new ActiveXObject("WScript.Shell");
+        WshShell.Run("C:/Users/c.gassmann/Desktop/Uni/Masterarbeit/run-prism-script.py", 1, false);
+        }
+    </script> -->
+</head>
+<body>
+
+    <div id="content">
+    <h1>Automated testing of ticketing application</h1>
+
+    <h2>Please enter ticketing system data. All fields required.<br>The results will show the probability of not recording zone 2 by changing accuracy between 20% and 100%.</h2>
+    <br>
+
+    <h2>Zones<br>Choose the size of the fare-zones. Zone 2 is the critical zone you want to analyse.</h2>
+
+    <div id="zones">
+    <h2>Zone 1</h2>
+    <select name="zone1" id="zone1">
+        <option value="s">small</option>
+        <option value="m">medium</option>
+        <option value="l">large</option>
+    </select>
+
+    <h2>Zone 2</h2>
+    <select name="zone2" id="zone2">
+        <option value="s">small</option>
+        <option value="m">medium</option>
+        <option value="l">large</option>
+    </select>
+
+    <h2>Zone 3</h2>
+    <select name="zone3" id="zone3">
+        <option value="s">small</option>
+        <option value="m">medium</option>
+        <option value="l">large</option>
+    </select>
+    </div>
+
+    <h2>Variables<br>Enter values for variables. (As percentage, e.g. 10 for 10%)</h2>
+
+    <div id="variables">
+    <h2>Proability of phone failure<br>Suggestion: 0.1</h2>
+    <input name="phone_failure" type="text" id="phone_failure" placeholder="0.1"/>
+
+    <h2>Probability user forgets check-in<br>Suggestion: 0.1</h2>
+    <input name="ci_failure" type="text" placeholder="0.1" id="ci_failure"/>
+
+    <h2>Proability of getting no location using GSM<br>Suggestion: 10</h2>
+    <input name="gsm_failure" type="text" placeholder="10" id="gsm_failure"/>
+
+    <h2>Probability of getting no location using Wi-Fi<br>Suggestion: 10</h2>
+    <input name="wifi_failure" type="text" placeholder="10" id="wifi_failure"/>
+
+    <h2>Probability of getting no location using GPS<br>Suggestion: 33</h2>
+    <input name="gps_failure" type="text" placeholder="33" id="gps_failure"/>
+    <br>
+    </div>
+
+    <div id="buttons">
+    <input type="button" class="btn" value="Run PRISM Script" onclick="RunFile();"/>
+    <input type="button" class="btn" value="Show Results" onclick="openResult();"/>
+    </div>
+
+    <div id="buttons">
+    <input type="button" class="btn" value="close" onClick="self.close();"> 
+    </div>
+
+    </div>
+</body>
+</html>
